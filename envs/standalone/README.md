@@ -32,6 +32,7 @@ $ terraform apply --var-file=./config.tfvars
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| profile | Your profile in `~/.aws/config` | string | `"default"` | no |
 | region | The region of instance to start | string | `"ap-northeast-1"` | no |
 | public_key_path | The public key path to use for the instance | string | `"~/.ssh/id_rsa.pub"` | no |
 | instance_count | Number of instances to launch | string | `"1"` | no |
