@@ -1,3 +1,4 @@
+profile="default"
 region="ap-northeast-1"
 public_key_path="~/.ssh/id_rsa.pub"
 instance_count="1"
