@@ -10,6 +10,10 @@ variable "public_key_path" {
   default = "~/.ssh/id_rsa.pub"
 }
 
+variable "ami_id" {
+  default = "ami-00a5245b4816c38e6"
+}
+
 variable "instance_count" {
   default = "1"
 }

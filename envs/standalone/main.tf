@@ -9,26 +9,6 @@ provider "aws" {
 
 data "aws_availability_zones" "available" {}
 
-data "aws_ami" "amazon_linux" {
-  most_recent = true
-
-  owners = ["amazon"]
-
-  filter {
-    name = "name"
-    values = [
-      "amzn-ami-hvm-*-x86_64-gp2",
-    ]
-  }
-
-  filter {
-    name = "owner-alias"
-    values = [
-      "amazon",
-    ]
-  }
-}
-
 resource "aws_key_pair" "key_pair" {
   key_name   = "key_pair-${terraform.workspace}-${local.name}"
   public_key = "${file(var.public_key_path)}"
@@ -76,7 +56,7 @@ module "ec2" {
   version                     = "1.21.0"
   name                        = "ec2-${terraform.workspace}-${local.name}"
   instance_count              = "${var.instance_count}"
-  ami                         = "${data.aws_ami.amazon_linux.id}"
+  ami                         = "${var.ami_id}"
   instance_type               = "${var.instance_type}"
   key_name                    = "${aws_key_pair.key_pair.key_name}"
   monitoring                  = true
