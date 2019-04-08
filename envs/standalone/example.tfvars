@@ -1,6 +1,7 @@
 profile="default"
 region="ap-northeast-1"
 public_key_path="~/.ssh/id_rsa.pub"
+ami_id="ami-00a5245b4816c38e6"
 instance_count="1"
 instance_type="t2.micro"
 root_volume_size="100"
